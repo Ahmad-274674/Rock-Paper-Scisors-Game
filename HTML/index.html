@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock | Paper | Scissors Game</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+
+<body>
+    <!-- User Interface - Game Initial Mode -->
+    <div class="container" id="firstPage">
+        <div class="welcomeMsg">
+            <h1 class="heading">Welcome</h1>
+            <div class="welcomeImg">
+                <img src="/Imgs/bg-1-home.png" alt="Logo Picture">
+            </div>
+            <h1 class="sub-heading">Chose game type to play!</h1>
+            <p class="paraGraph">You want to play with</p>
+            <div class="btn">
+                <button id="computerPlayBtn">Computer</button>
+                <button id="friendPlayBtn">Friend</button>
+            </div>
+        </div>
+    </div>
+    <!-- User Interface Game Requirments Mode With Computer -->
+    <div id="secondPage" style="display: none;">
+        <div class="container">
+            <p class="paraGraph">OK! You Select to Play with Computer</p>
+            <div class="container" style="background: #fcff5b; flex-direction: column;">
+                <div class="welcomeImg">
+                    <img src="/Imgs/bg-2.png" alt="Logo Picture">
+                </div>
+                <input type="text" placeholder="Enter your name" id="computerPlayInput" required>
+                <p class="paraGraph" id="wrongCP" style="display: none;"></p>
+                <div class="btn" style="width: 100%;">
+                    <button id="resetCP">Reset</button>
+                    <button id="submitCP">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="thirdPage" style="display: none;">
+        <div class="container">
+            <p class="paraGraph">OK! You Select to Play with your Friend</p>
+            <div class="container" style="background: #fcff5b; flex-direction: column;">
+                <div class="welcomeImg">
+                    <img src="/Imgs/bg-3.png" alt="Logo Picture">
+                </div>
+                <input id="userInputOne" type="text" placeholder="Your name" required>
+                <input id="userInputTwo" type="text" placeholder="Your Friend's name" required>
+                <p class="paraGraph" id="wrongInput" style="display: none;"></p>
+                <div class="btn" style="width: 100%;">
+                    <button id="resetUS">Reset</button>
+                    <button id="submitUS">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="forthPage" style="display: none;">
+        <div class="container">
+            <p class="paraGraph">Welcome Players</p>
+            <div class="gameBox">
+                <div id="userOneDetails" style="display: flex; gap: 20px;">
+                    <p class="paraGraph">Player One Name: </p>
+                    <p id="playerOneName" class="paraGraph"></p>
+                </div>
+                <div id="userTwoDetails" style="display: flex; gap: 20px;">
+                    <p class="paraGraph">Player Two Name: </p>
+                    <p id="playerTwoName" class="paraGraph"></p>
+                </div>
+                <div id="gameArea" class="container" style="background: var(--result-bg-color);">
+                    <div class="userGame">
+                        <div class="userGameArea">
+                            <div class="showSelectionImg">
+                                <img src="/Imgs/Rock.png" alt="Rock">
+                            </div>
+                            <div class="btn-game">
+                                <button>Rock</button>
+                                <button>Paper</button>
+                                <button>Scissors</button>
+                            </div>
+                        </div>
+                        <div class="userGameArea">
+                            <div class="showSelectionImg">
+                                <img src="/Imgs/Rock.png" alt="Rock">
+                            </div>
+                            <div class="btn-game">
+                                <button>Rock</button>
+                                <button>Paper</button>
+                                <button>Scissors</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Scripts/main.js"></script>
+</body>
+
+</html>

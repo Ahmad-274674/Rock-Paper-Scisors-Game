@@ -1,0 +1,233 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --bg-color: #4e4e4e;
+    --main-bg-color: #5e5e53;
+    --game-bg-color: #2196f3;
+    --result-bg-color: #ff0057;
+    --text-color: #fff;
+    --text-s-color: #ce00a1;
+    --text-heading-color: #f1ff2bdd;
+    --selection-color: #19b6ff;
+}
+
+::selection{
+    background: var(--selection-color);
+    color: var(--text-s-color);
+}
+
+body{
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 99.9vh;
+}
+
+/* Reuseable Styling */
+.welcomeImg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.welcomeImg img{
+    height: 200px;
+    border-radius: 10px;
+    transform: rotate(270deg);
+    background: var(--result-bg-color);
+}
+
+.welcomeImg img:hover{
+    animation: 0.7s imgHover forwards;
+}
+
+.container{
+    background: var(--main-bg-color);
+    min-width: 600px;
+    min-height: 350px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5), inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    color: var(--text-heading-color);
+    font-size: 70px;
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.sub-heading{
+    text-align: center;
+    color: var(--text-color);
+    font-size: 40px;
+    margin: 10px 0px;
+}
+
+.paraGraph{
+    color: var(--text-color);
+    font-size: 20px;
+    margin: 10px 0px;
+    background: var(--bg-color);
+    padding: 10px 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+/* Now the exact styling */
+.btn button{
+    padding: 5px 30px;
+    font-size: 20px;
+    width: 48%;
+    cursor: pointer;
+    margin: 30px 3px;
+    border-radius: 5px;
+    border: none;
+    color: var(--text-color);
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff2525, #61ff61);
+}
+
+.btn button:hover{
+    animation: 0.3s buttonHover forwards;
+    background: linear-gradient(-65deg, #ff2525, #61ff61);
+    border: 2px dashed white;
+}
+
+.container input{
+    width: 100%;
+    font-size: 20px;
+    background: var(--bg-color);
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5), inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: var(--text-color);
+    margin: 10px 0px;
+    transition: all 0.8s;
+}
+
+.container input::placeholder{
+    color: yellow;
+}
+
+.gameBox{
+    background: var(--game-bg-color);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.8), inset 0px 0px 10px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+}
+
+.userGame{
+    display: flex;
+    width: 100%;
+}
+
+.userGameArea{
+    background: var(--game-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.4), inset 0px 0px 10px rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    margin: 10px;
+    width: 100%;
+}
+
+.showSelectionImg{
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.4), inset 0px 0px 10px rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.showSelectionImg img{
+    width: 140px;
+    height: 140px;
+}
+
+.btn-game button{
+    background: var(--result-bg-color);
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.4), inset 0px 0px 10px rgba(0, 0, 0, 0.9);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 15px 10px;
+    width: 150px;
+    color: var(--text-color);
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.btn-game button:hover{
+    background: var(--game-bg-color);
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+
+/* Animations */
+@keyframes buttonHover {
+    0%{
+        background: linear-gradient(-65deg, #ff2525, #61ff61);
+        color: red;
+        border: 3px dashed red;
+    }
+    50%{
+        background: linear-gradient(135deg, #ff2525, #61ff61);
+        color: green;
+    }
+    75%{
+        background: linear-gradient(90deg, #ff2525, #61ff61);
+        color: yellow;
+        border: 3px dashed yellow;
+    }
+    100%{
+        background: linear-gradient(-65deg, #ff2525, #61ff61);
+        color: blue;
+    }
+}
+
+@keyframes imgHover {
+    0%{
+        background: linear-gradient(-65deg, var(--game-bg-color), var(--result-bg-color));
+    }
+    50%{
+        background: linear-gradient(135deg, var(--game-bg-color), var(--result-bg-color));
+    }
+    75%{
+        background: linear-gradient(90deg, #ff2525, #61ff61);
+    }
+    100%{
+        background: linear-gradient(-65deg, var(--game-bg-color), var(--result-bg-color));
+    }
+}
